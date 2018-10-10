@@ -8,7 +8,7 @@ namespace Lab6
 {
     class Program
     {
-        public void RGENERATOR(Random r, int dieSides)
+        public static void RGENERATOR(Random r, int dieSides)
         {
             int r1 = (r.Next(1, dieSides + 1));
             int r2 = (r.Next(1, dieSides + 1));
@@ -19,21 +19,26 @@ namespace Lab6
             else if (r1 == 1 && r2 == 1)
                 msg = "SNAKE EYES.";
             else if (r1 == 6 && r2 == 6)
-                msg = "Boxcar.";
+                msg = "BOXCAR.";
             Console.WriteLine("DICE1".PadRight(7) + "DICE2".PadRight(7));
             Console.WriteLine(r1.ToString().PadRight(7) + r2.ToString().PadRight(7)+ msg);
         }
+
         static void Main(string[] args)
         {
             Program p = new Program();
+            string reader = "";
             Random r = new Random();
             Console.WriteLine("ENTER SIDES: ");
             int dieSides = int.Parse(Console.ReadLine());
             bool s = true;
             while (s)
             {
-                p.RGENERATOR(r, dieSides);
-                s = (Console.ReadLine() == "n") ? false : true;
+                RGENERATOR(r, dieSides);
+                Console.Write("y to restart (Anykey to exit): ");
+                reader = Console.ReadLine().ToLower();
+                if (reader != "y")
+                    break;
             }
         }
     }
