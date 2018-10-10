@@ -8,7 +8,7 @@ namespace Lab6
 {
     class Program
     {
-        public static void RGENERATOR(Random r, int dieSides)
+        public void RGENERATOR(Random r, int dieSides)
         {
             int r1 = (r.Next(1, dieSides + 1));
             int r2 = (r.Next(1, dieSides + 1));
@@ -34,7 +34,7 @@ namespace Lab6
             bool s = true;
             while (s)
             {
-                RGENERATOR(r, dieSides);
+                p.RGENERATOR(r, dieSides);
                 Console.Write("y to restart (Anykey to exit): ");
                 reader = Console.ReadLine().ToLower();
                 if (reader != "y")
