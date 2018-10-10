@@ -12,6 +12,7 @@ namespace Lab6
         {
             int r1 = (r.Next(1, dieSides + 1));
             int r2 = (r.Next(1, dieSides + 1));
+
             string msg = "";
             if (r1 + r2 == 7)
                 msg = "Seven! *snaps fingers*";
@@ -19,9 +20,9 @@ namespace Lab6
                 msg = "SNAKE EYES.";
             else if (r1 == 6 && r2 == 6)
                 msg = "Boxcar.";
+
             Console.WriteLine("DICE1".PadRight(7) + "DICE2".PadRight(7));
             Console.WriteLine(r1.ToString().PadRight(7) + r2.ToString().PadRight(7)+ msg);
-
         }
         static void Main(string[] args)
         {
@@ -34,8 +35,6 @@ namespace Lab6
                 RGENERATOR(r, dieSides);
                 s = (Console.ReadLine() == "n") ? false : true;
             }
-
-            
         }
     }
 }
